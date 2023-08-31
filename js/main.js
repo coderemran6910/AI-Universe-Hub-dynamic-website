@@ -72,6 +72,7 @@ const loadDeatails = async (id) => {
     const data = await response.json();
     my_modal_4.showModal()
     const productDetails = data.data;
+    console.log(productDetails.pricing);
     const modalContainer = document.getElementById('modal-container')
 
 
@@ -79,18 +80,15 @@ const loadDeatails = async (id) => {
  <div class="flex justify-center items-center">
             <!-- modal left side -->
             <div class=" border-red-400 w-full flex-1">
-                <h3 class="text-3xl font-semibold ">ChatGPT is an AI-powered chatbot platform that uses OpenAI's GPT
-                    technology to simulate
-                    human conversation.</h3>
-                <!-- color text -->
+                <h3 class="text-xl font-semibold ">${productDetails.description}</h3>
+                <!-- Pricing -->
                 <div class="flex justify-around">
-                    <p class="text-green-500 text-sm text-center font-extrabold">$10/month
-                        Basic</p>
-                    <p class="text-yellow-600 text-sm text-center font-extrabold">$50/month
-                        Pro</p>
-                    <p class="text-red-500 text-sm text-center font-extrabold">Contact
-                        us
-                        Enterprise</p>
+                    <p class="text-green-500 text-sm text-center font-extrabold">${productDetails.pricing[0].price}
+                        <span>${productDetails.pricing[1].plan}</span></p>
+                    <p class="text-yellow-600 text-sm text-center font-extrabold">${productDetails.pricing[1].price}
+                        <span>${productDetails.pricing[1].plan}</span></p>
+                    <p class="text-red-500 text-sm text-center font-extrabold">${productDetails.pricing[2].price}
+                        <span>${productDetails.pricing[1].plan}</span></p>
 
                 </div>
 
@@ -116,7 +114,7 @@ const loadDeatails = async (id) => {
             <!-- modal right side -->
             <div class=" border-red-400 w-full flex-1">
                 <div>
-                    <img src="./1.jpg" alt="">
+                    <img src="${productDetails.image_link}" alt="">
                 </div>
                 <div class="text-center ">
                     <h3>Hi, how are you doing today?</h3>
