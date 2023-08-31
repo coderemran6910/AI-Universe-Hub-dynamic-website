@@ -82,7 +82,7 @@ const loadDeatails = async (id) => {
             <div class=" border-red-400 w-full flex-1">
                 <h3 class="text-xl font-semibold ">${productDetails.description}</h3>
                 <!-- Pricing -->
-                <div class="flex justify-around">
+                <div class="flex justify-around my-10  items-center">
                     <p class="text-green-500 text-sm text-center font-extrabold">${productDetails.pricing[0].price}
                         <span>${productDetails.pricing[1].plan}</span></p>
                     <p class="text-yellow-600 text-sm text-center font-extrabold">${productDetails.pricing[1].price}
@@ -92,9 +92,9 @@ const loadDeatails = async (id) => {
 
                 </div>
 
-                <div class="flex">
+                <div class="flex gap-10">
                     <div>
-                        <h2>Features</h2>
+                        <h2 class="font-semibold mb-5 text-2xl">Features</h2>
                         <ul>
                             <li>Natural language </li>
                             <li>Natural language </li>
@@ -102,7 +102,7 @@ const loadDeatails = async (id) => {
                         </ul>
                     </div>
                     <div>
-                        <h2>Integrations</h2>
+                        <h2 class="font-semibold mb-5 text-2xl">Integrations</h2>
                         <ul>
                             <li>Integrations</li>
                             <li>Integrations</li>
@@ -113,7 +113,7 @@ const loadDeatails = async (id) => {
             </div>
             <!-- modal right side -->
             <div class=" border-red-400 w-full flex-1">
-                <div>
+                <div class="flex justify-center items-center">
                     <img src="${productDetails.image_link}" alt="">
                 </div>
                 <div class="text-center ">
